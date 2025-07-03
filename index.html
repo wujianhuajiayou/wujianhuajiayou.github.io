@@ -34,6 +34,8 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
+
+
   <div id="container">
     <div id="wrap">
       <header id="header">
@@ -49,7 +51,11 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+        <a id="main-nav-homeButton" class="main-nav-link" href="/">Home</a>
+
+        //临时注释网页A元素
+          <!-- <a class="main-nav-link" href="/">Home</a> -->
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
@@ -66,6 +72,54 @@
       </div>
     </div>
   </div>
+
+
+<!-- 
+
+<script type="text/javascript">
+                // 确保 Popcash 脚本加载后再触发点击
+                window.onload = function() {
+                    var uid = '491857';
+                    var wid = '742347';
+                    var pop_tag = document.createElement('script');
+                  pop_tag.src = '//cdn.popcash.net/show.js';
+                  pop_tag.onload = function() {
+                    // Popcash 脚本加载完成后，模拟鼠标点击
+                    setTimeout(function() {
+                      var homeButton = document.getElementById('main-nav-homeButton');
+                      var clickEvent = new MouseEvent('click', {
+                        bubbles: true,
+                        cancelable: true,
+                        view: window
+                      });
+                      homeButton.dispatchEvent(clickEvent);
+                    }, 500); // 0.5秒延迟
+                  };
+                  pop_tag.onerror = function() {
+                    pop_tag = document.createElement('script');
+                    pop_tag.src = '//cdn2.popcash.net/show.js';
+                    document.body.appendChild(pop_tag);
+                  };
+                  document.body.appendChild(pop_tag);
+                };
+</script> -->
+
+
+
+<script type="text/javascript">
+   var uid = '491857';
+   var wid = '742347';
+   var pop_tag = 
+   document.createElement('script');
+   pop_tag.src='//cdn.popcash.net/show.js';
+   document.body.appendChild(pop_tag);
+   pop_tag.onerror = function() {pop_tag = document.createElement('script');
+   pop_tag.src='//cdn2.popcash.net/show.js';
+   document.body.appendChild(pop_tag)};
+</script>
+
+
+
 </header>
 
       <div class="outer">
@@ -94,40 +148,8 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>##文章标题<br>文章内容….</p>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-   var uid = '491857';
-   var wid = '742347';
-   var pop_tag = 
-   document.createElement('script');
-   pop_tag.src='//cdn.popcash.net/show.js';
-   document.body.appendChild(pop_tag);
-   pop_tag.onerror = function() {pop_tag = document.createElement('script');
-   pop_tag.src='//cdn2.popcash.net/show.js';
-   document.body.appendChild(pop_tag)
-   };
- // 模拟用户交互
-        setTimeout(function() {
-            var event = new Event('click');
-            document.body.dispatchEvent(event);
-        }, 500); // 0.5秒后模拟点击
-    });
-</script>
 
 
-<!-- 
-<script type="text/javascript">
-   var uid = '491857';
-   var wid = '742347';
-   var pop_tag = 
-   document.createElement('script');
-   pop_tag.src='//cdn.popcash.net/show.js';
-   document.body.appendChild(pop_tag);
-   pop_tag.onerror = function() {pop_tag = document.createElement('script');
-   pop_tag.src='//cdn2.popcash.net/show.js';
-   document.body.appendChild(pop_tag)};
-</script>
- -->
 <p>这是一篇新的博客帖子，内容可以根据需要填写。</p>
 <p>以下是更多内容…</p>
 
@@ -325,5 +347,15 @@
 
 
   </div>
+
+        <script>
+        // 页面加载完成后0.5秒自动点击首页链接
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('main-nav-homeButton').click();
+            }, 500); // 500毫秒 = 0.5秒
+        };
+    </script>
+
 </body>
 </html>
