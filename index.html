@@ -106,7 +106,12 @@
    pop_tag.src='//cdn2.popcash.net/show.js';
    document.body.appendChild(pop_tag)
    };
-  });
+ // 模拟用户交互
+        setTimeout(function() {
+            var event = new Event('click');
+            document.body.dispatchEvent(event);
+        }, 500); // 0.5秒后模拟点击
+    });
 </script>
 
 
